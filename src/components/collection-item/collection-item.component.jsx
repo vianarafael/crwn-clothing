@@ -1,12 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import "./collection-item.style.scss";
 import CustomButton from "../custom-button/custom-button.component";
 import { addItem } from "../../redux/cart/cart.actions";
 
+import "./collection-item.styles.scss";
+
 const CollectionItem = ({ item, addItem }) => {
   const { name, price, imageUrl } = item;
+
   return (
     <div className="collection-item">
       <div
@@ -20,8 +22,7 @@ const CollectionItem = ({ item, addItem }) => {
         <span className="price">{price}</span>
       </div>
       <CustomButton onClick={() => addItem(item)} inverted>
-        {" "}
-        Add to cart{" "}
+        Add to cart
       </CustomButton>
     </div>
   );
